@@ -1,0 +1,32 @@
+#masthead{
+	background: #249394;
+	height: 80px;
+}
+
+.menu-header-nav-container,
+#primary-menu,
+#site-navigation,
+.nav-menu{
+	width: 100%;
+}
+
+
+.site-title a,
+#primary-menu a,
+#navbarLogin a{
+	color: white;
+}
+#primary-menu a,
+#navbarLogin a{
+}
+.site-title{
+	margin: 0px;
+}
+
+.site-description{
+	display: none;
+}
+
+.main-navigation li{
+padding: 1rem;
+}

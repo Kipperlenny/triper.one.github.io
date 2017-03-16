@@ -1,0 +1,483 @@
+.blog #main article{
+	background: #f5f5f5;
+	padding: 1rem;
+	border-radius: 1rem;
+	margin: 1rem auto;
+	max-width: 1000px;
+}
+#newEventFormDiv{
+	max-width: 1000px;
+}
+
+.blog aside{
+	background: #f5f5f5;
+	max-width: 400px;
+}
+#searchEventForm{
+	margin: auto;
+	width: 98%;
+	max-width: 1000px;
+	min-width: 300px;
+}
+#filterForm{
+	text-align: center;
+    background: #f5f5f5;
+    margin-bottom: 2rem;
+    max-height: 500px;
+    width:100%;
+    border: 1px solid white;
+    transition: max-height .5s ease, overflow .5s ease .5s, border .5s ease, background .5s ease .5s;
+}
+#filterForm.closed{
+    max-height: 3rem;
+    background: white;
+    overflow: hidden;
+    border-radius: 3rem;
+    width: 200px;
+    margin: auto;
+    border: 1px solid grey;
+    transition: max-height .5s ease, width .5s ease .5s, background .5s ease;
+}
+#filterForm.closed #filterHeading{
+        color: grey;
+}
+#filterHeading{
+    margin: 0rem;
+    padding: 0.55rem 0;
+    cursor: pointer;
+    background: white;
+}
+#filterForm #filterHeading:hover{
+    color: #249394;
+}
+#filterForm.closed #filterOptionsLeft,
+#filterForm.closed #filterCategoryChexboxes{
+    background: white;
+    transition: background .5s ease .5s;
+}
+#filterForm #filterOptionsLeft,
+#filterForm #filterCategoryChexboxes{
+    transition: background .5s ease .5s;
+    	-webkit-flex-basis: 200px;	
+	    -ms-flex-preferred-size: 200px;	
+	    flex-basis: 200px;
+
+}
+
+
+.myEvents #filterForm{
+    display: none;
+}
+#searchEventForm div,
+#submitSearchEventForm,
+#selectCategorySearchForm{
+	margin:1rem;
+}
+#searchEventForm div{
+	padding-bottom: 0px;
+
+}
+div.selectInspiration{
+	background: white;
+}
+#mapImage{
+	display: block;
+}
+#selectCategorySearchForm{
+	visibility: hidden;
+}
+
+div.categorySelection.cs-select.cs-skin-elastic{
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.cs-placeholder{
+	margin: 0px !important;
+	padding: 0px !important;
+	padding-right: 2em !important;
+	font-size: 1rem;
+	color: #999;
+	text-align: center;
+}
+.cs-placeholder::after{
+	right: 1em;
+}
+.cs-select .cs-options{
+	margin: 0px !important;
+	background: #f5f5f5 !important;
+}
+.cs-options ul li span{
+	padding: 0px !important;
+	text-align: center !important;
+	font-size: 1rem;
+	color: #999;
+}
+.cs-select ul li{
+	border: 1px solid white;
+	padding: 0.5rem;
+}
+.cs-select ul li:hover span{
+	color: #249394 !important;
+}
+.cs-select ul{
+	border: 2px solid white;
+}
+#searchEventForm .selectInspiration{
+	min-width:200px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+.formRow{
+	width: 100%;
+}
+
+#newEventCategory{
+	width:31%;
+	min-width: 150px;
+}
+
+#newEventCityDiv,
+#newEventCountryDiv{
+	width: 35%;
+}
+#newEventParticipants{
+	width: 100%;
+	max-width: 150px;
+}
+
+.required{
+	color: red !important;
+}
+
+#newEventCategory{
+	align-self: flex-end;
+	border: 1px solid #ccc !important;
+	background: #f5f5f5 !important;
+	padding: 0.23rem;
+	margin-bottom: 0.18rem;
+}
+#newEventCategory span.cs-placeholder,
+#newEventCategory .categorySelection{
+	background: #f5f5f5 !important;
+}
+#newEventCategory .categorySelection span,
+#newEventCategory .categorySelection li{
+	color: #777;
+}
+
+
+
+#newEventCategory .cs-skin-elastic .cs-options{
+	padding-bottom: 0px;
+	top: 30px;
+	position: absolute;
+}
+#submitSearchEventForm,
+.simpleButton{
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+	background-color:#ffffff;
+}
+
+
+#submitSearchEventForm:hover,
+.simpleButton:hover{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	background-color:#f6f6f6;
+    color: #249394;
+}
+#submitSearchEventForm:active,
+.simpleButton:active{
+	position:relative;
+	top:1px;
+}
+
+
+
+
+
+#newEventForm input,
+#newEventForm textarea{
+	border-radius: 0px;
+	margin-bottom: 0.25rem;
+}
+#newEventDescription{
+}
+
+
+.simpleButton{
+	border-bottom: 1px solid #ddd !important;
+	border-radius: 5px !important;
+	background: white !important;
+	color: #3e3e3e;
+	font-size: 1rem;
+	text-transform: uppercase;
+	transition: color .3s ease, background .3s ease;
+	margin-top: 1rem;
+}
+#newEventForm textarea:focus,
+#newEventForm input:focus{
+	transition: color .3s ease, background .3s ease;
+	background: #e5e5e5;
+	color: black;
+}
+
+#newEventImageDiv #file,
+#newEventImageDiv label{
+	padding: 1rem;
+}
+
+#newEventImageDiv #file {
+	background: white !important;
+}
+
+
+#newEventForm input::-webkit-input-placeholder,
+::-webkit-textarea-placeholder{
+	text-transform: uppercase;
+}
+#newEventForm textarea::-moz-placeholder,
+#newEventForm input::-moz-placeholder{
+	text-transform: uppercase;
+}
+#newEventForm textarea:-moz-placeholder,
+#newEventForm input:-moz-placeholder{
+	text-transform: uppercase;
+}
+#newEventForm input:-ms-input-placeholder,
+#newEventForm textarea:-ms-textarea-placeholder{
+	text-transform: uppercase;
+}
+
+#newEventForm input::-webkit-input-placeholder,
+#newEventForm textarea::-webkit-textarea-placeholder {
+	text-transform: uppercase;	
+}
+
+textarea:focus::-webkit-input-placeholder,
+input:focus::-webkit-input-placeholder {
+    color: black;
+	
+}
+
+/* Firefox < 19 */
+textarea:focus:-moz-placeholder,
+input:focus:-moz-placeholder {
+    color: black;
+	
+}
+
+/* Firefox > 19 */
+textarea:focus::-moz-placeholder,
+input:focus::-moz-placeholder {
+    color: black;
+	
+}
+
+/* Internet Explorer 10 */
+
+textarea:focus:-ms-input-placeholder,
+input:focus:-ms-input-placeholder {
+    color: black;
+	
+}
+#newEventFormDiv{
+	max-height: 1000px;
+    text-align: center;
+    margin-bottom: 2rem;
+    width:100%;
+    border: 1px solid white;
+    transition: max-height .5s ease, overflow .5s ease .5s, border .5s ease, background .5s ease .5s;
+}
+
+#newEventFormDiv.closed{
+    width: 250px;
+    margin: auto;
+    border: 1px solid grey;
+    border-radius: 3rem;
+    max-height: 3rem;
+    background: white;
+    overflow: hidden;
+    transition: max-height .5s ease, width .5s ease .5s, background .5s ease;
+}
+#newEventFormDiv.closed #newEventHeading{
+    color: grey ;
+}
+#newEventHeading:hover{
+    color: #249394;
+}
+#newEventHeading{
+	text-align: center;
+    margin: 0.6rem;
+    cursor: pointer;
+}
+#newEventFormDiv input,
+#newEventFormDiv textarea{
+	background: #f5f5f5;
+}
+div.cs-options{
+	background: #eee;
+	padding-bottom: 0px;
+}
+
+.cs-skin-elastic.cs-active .cs-options ul li{
+	background: #f5f5f5;
+}
+.cs-skin-elastic.cs-active .cs-options ul li:hover{
+	background: #e5e5e5;
+}
+
+
+
+#main article,
+#main article p,
+#main article a,
+#main article span,
+#main article h2,
+#main article h3,
+#main article h4,
+#main article ul,
+#main article li
+{
+	color:black;
+}
+
+#main article a:hover,
+#main article a span:hover{
+	color: #249394 !important;
+}
+
+.classNameAnchor::after{
+	content: ' / ';
+}
+
+.classNames .classNameAnchor:last-of-type::after{
+	content: '';
+}
+
+/* AJAX spinner for slow connections */
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+}
+.load-more-ajax-loader,
+.ajax-loader {
+    display: none;
+    text-align: center;
+    padding: .7em;
+}
+
+.load-more-ajax-loader img,
+.ajax-loader img {
+    animation: spinner .6s linear infinite;
+}
+
+.ajax-loader.global-activity{
+	position: absolute;
+	left: calc(50% - 32px);
+}
+
+#indexHeader{
+	text-align: center;
+}
+.hostAvatar,
+.avatar,
+#buddypress #item-header-cover-image #item-header-avatar img.avatar{
+	border-radius: 50%;
+}
+
+
+#newEventCategory.requiredInput,
+.requiredInput{
+	background: rgba(255, 0, 0, 0.28) !important;
+}
+#newEventCategory.requiredInput span.cs-placeholder,
+#newEventCategory.requiredInput .categorySelection{
+	background: rgba(0,0,0,0.0) !important;
+}
+#newEventFormMessage{
+	color: red;
+}
+
+article .entry-title{
+	text-align: center;
+}
+
+.read-more{
+	color: #249394 !important;
+	transition: color .3s ease;
+}
+.read-more:hover{
+	transition: color .3s ease;
+	text-shadow: 0px 0px 7px rgba(41, 169, 170, 0.79);
+}
+
+.loadMoreLink{
+	margin: auto;
+	width: 130px;
+	display: block;
+	border: 1px solid grey;
+	text-align: center;
+	padding: 0.5rem 1rem;
+	color: grey !important;
+}
+
+
+#map{
+    width: 100%;
+    min-height: 300px;
+}
+
+
+#filterCategoryChexboxes{
+    width: 100%;
+}
+#filterCategoryChexboxes ul li label{
+    padding-left: 1rem;
+}
+#filterCategoryChexboxes ul{
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style: none;
+    text-align: left;
+}
+#indexTabNavi{
+    margin-bottom: 1.5rem;
+}
+.indexHeaderTab.active{
+    border: 1px solid grey;
+    border-bottom: none;
+    background: white;
+    cursor:default;
+}
+.indexHeaderTab {
+    border-bottom: 1px solid grey;
+    background: #f5f5f5;
+    cursor: pointer;
+    transition: background .5s ease, color .5s ease;
+}
+.indexHeaderTab h3{
+    color: #555; 
+}
+.indexHeaderTab.active h3{
+    color: #000; 
+}

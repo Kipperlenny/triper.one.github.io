@@ -1,0 +1,21 @@
+@media only screen and (min-width: 600px) and (max-width:1100px){
+
+    #filterForm{
+        max-height: 900px;
+    }
+    
+    #filterCategoryChexboxes ul{
+        display: block;
+    }
+    #filterCategoryChexboxes li{
+        padding: 1rem 0px;
+    }
+    #filterCategoryChexboxes li label{
+        padding: 1rem 0px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    #filterCategoryChexboxes li input{
+        cursor: pointer;
+    }
+}

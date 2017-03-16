@@ -1,0 +1,56 @@
+#primary,
+#masthead,
+#metaSidebar,
+#userSidebar{
+	padding: 1rem;
+}
+
+#primary{
+	-webkit-box-flex: 7;
+	-webkit-flex: 7 1 70%;
+	-ms-flex: 7 1 70%;
+	flex: 7 1 70%;
+}
+#metaSidebar,
+#userSidebar{
+	-webkit-box-flex: 3;
+	-webkit-flex: 3 1 30%;
+	-ms-flex: 3 1 30%;
+	flex: 3 1 30%;
+}
+#login h1 a {
+	background-image: url('images/logo.php');
+	background-image: none, url('images/logo.php');
+}
+
+.hidden{
+	visibility: hidden;
+}
+.visible{
+	visibility: visible;
+}
+
+.none{
+	display: none !important;
+}
+.textLeft{
+    text-align: left;
+}
+.textRight{
+    text-align: right;
+}
+.textJustify{
+    text-align: justify;
+}
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes 
+    -ms-transform: scale(2);
+    -moz-transform: scale(2); 
+    -webkit-transform: scale(2); 
+    -o-transform: scale(2);
+    transform: scale(2); 
+  padding: 10px;
+    */
+}
