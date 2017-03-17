@@ -22,7 +22,3 @@ if($actionGet === 'join'){
 if($actionGet === 'cancel'){
 	cancelEvent($userIdGet, $postIdGet);
 }
-
-
-
-?>

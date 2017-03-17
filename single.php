@@ -8,13 +8,11 @@
  */
 
 
-get_header();
+get_header(); ?>
 
+<div id="content" class="site-content themeform">
 
-?>
-<div id="content" class="site-content">
-
-<?php  get_sidebar('left'); ?>
+<?php get_sidebar('left'); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -22,12 +20,7 @@ get_header();
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_format() );
-
-			/*the_post_navigation(array(
-            	'prev_text' => __( 'Previous', 'triperone' ),
-				'next_text' => __( 'Next', 'triperone' ),
-			));*/
+			get_template_part( 'content' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
@@ -40,6 +33,8 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
-get_sidebar('right');
-get_footer();
+<?php get_sidebar( 'right' ); ?>
+  
+   </div><!-- #content -->
+    
+<?php get_footer(); ?>

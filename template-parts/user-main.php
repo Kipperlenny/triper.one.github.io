@@ -9,31 +9,28 @@
     );
 ?>
 	
-<div id="content" class="site-content">
+<div id="content" class="site-content themeform">
 	<?php get_sidebar('left'); ?>
 	
 	
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area zilla-one-half">
 		
 			
                 <?php // a join/cancel-event function which must stay outside the loop, because otherwise it adds multiple id's in the database
 				get_template_part('controller/controller','eventparticipation');	?>
 			
 		
-                <div id="indexTabNavi" class="flex flexRow justifyAround">
-                    <div class="indexHeaderTab active flexOne flex justifyAround" id="myEventsTab">
+                <div id="indexTabNavi">
+                    <div class="indexHeaderTab active" id="myEventsTab">
 
-                        <h3>My Events</h3>
-
-                    </div>
-                    <div class="indexHeaderTab flex flexOne justifyAround" id="globalActivityTab">
-
-                        <h3>Global Activity</h3>
+                        <h4>My Events</h4>
 
                     </div>
+                    <div class="indexHeaderTab" id="globalActivityTab">
 
+                        <h4>Global Activity</h4>
 
-
+                    </div>
                    
                 </div>
 		      <div class="ajax-loader global-activity"><img src="<?php bloginfo('template_url') ?>/images/spinner.svg" width="32" height="32" /></div>
@@ -82,9 +79,12 @@
 
 					else :
 
-						get_template_part( 'template-parts/content', 'none' );
+						//get_template_part( 'template-parts/content', 'none' );You have not created an event yet.
+                            ?>
+                         <h4 class="no-event"><?php _e('You have not created an event yet', 'triperone'); ?></h4>
+                         <p class="no-event-desc"><?php _e('Just try it out.', 'triperone'); ?></p>
 
-					endif; ?>
+					<?php endif; ?>
 						
 		</main><!-- #main -->
                         

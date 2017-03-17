@@ -12,6 +12,6 @@ if ( ! is_active_sidebar( 'sidebar-right' ) ) {
 }
 ?>
 
-<aside id="metaSidebar" class="widget-area" role="complementary">
+<aside id="metaSidebar" class="widget-area zilla-one-fourth zilla-column-last" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-right' ); ?>
 </aside><!-- #secondary -->

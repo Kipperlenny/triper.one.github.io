@@ -15,8 +15,7 @@ get_header(); ?>
 		<?php
 		  $args = array('post_type'=>array('posts', 'event'));
 
-		  query_posts($args);
-		if ( have_posts() ) : ?>
+		  query_posts($args); if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<?php

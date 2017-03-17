@@ -28,6 +28,8 @@ function triperone_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'triperone_custom_header_setup' );
 
+
+
 if ( ! function_exists( 'triperone_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.

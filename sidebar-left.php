@@ -8,11 +8,11 @@
  */
 
 if ( ! is_active_sidebar( 'sidebar-left' ) ) {
-	echo '<h1> not active </h1>';
+	echo '<h4> not active </h4>';
 	return;
 }
 ?>
 
-<aside id="userSidebar" class="widget-area" role="complementary">
+<aside id="userSidebar" class="widget-area zilla-one-fourth" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-left' ); ?>
 </aside><!-- #secondary -->

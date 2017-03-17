@@ -39,6 +39,8 @@ function triperone_posted_on() {
 }
 endif;
 
+
+
 if ( ! function_exists( 'triperone_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -122,3 +124,46 @@ function triperone_category_transient_flusher() {
 }
 add_action( 'edit_category', 'triperone_category_transient_flusher' );
 add_action( 'save_post',     'triperone_category_transient_flusher' );
+
+
+
+
+
+if ( ! function_exists( 'triper_logo' ) ) :
+/**
+ * Zeigt das Logo an und nutzt den Customizer dazu
+ * @author Andreas Hecht
+ */
+function triper_logo() {
+	if ( ! get_theme_mod( 'triper_logo' ) ) {
+		return;
+	}
+	$logo_tag = ( is_front_page() && get_theme_mod( 'triper_replace_blogname' ) ) ? 'div' : 'div';
+	$logo_alt = ( get_theme_mod( 'triper_replace_blogname' ) ) ? get_bloginfo( 'name' ) : '';
+	$logo_src = esc_url( get_theme_mod( 'triper_logo' ) );
+	if ( get_theme_mod( 'triper_retina_logo' ) ) :
+		list( $logo_width ) = getimagesize( $logo_src );
+		$logo_width = round( $logo_width / 2 ); ?>
+		<<?php echo esc_attr( $logo_tag ); ?> class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img alt="<?php echo esc_attr( $logo_alt ); ?>" src="<?php echo esc_attr( $logo_src ); ?>" /></a></<?php echo esc_attr( $logo_tag ); ?>>
+	<?php else: ?>
+		<<?php echo esc_attr( $logo_tag ); ?> class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img alt="<?php echo esc_attr( $logo_alt ); ?>" src="<?php echo esc_attr( $logo_src ); ?>" /></a></<?php echo esc_attr( $logo_tag ); ?>>
+	<?php endif;
+}
+endif;
+
+
+if ( ! function_exists( 'triper_site_title' ) ) :
+/**
+ * Zeigt den Titel der Website an oder auch nicht, wenn Logo in Verwendung
+ * @author Andreas Hecht
+ */
+function triper_site_title() {
+	if ( get_theme_mod( 'triper_logo' ) && get_theme_mod( 'triper_replace_blogname' ) ) {
+		return;
+	}
+	$title_tag = ( is_front_page() ) ? 'div' : 'div';
+	?>
+	<<?php echo esc_attr( $title_tag ); ?> class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></<?php echo esc_attr( $title_tag ); ?>>
+	<?php
+}
+endif;

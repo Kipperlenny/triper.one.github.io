@@ -19,6 +19,19 @@
 			$( '.site-description' ).text( to );
 		} );
 	} );
+    
+    	// Logo
+	wp.customize( 'triper_logo_margin_top', function( value ) {
+		value.bind( function( newval ) {
+			$( '.site-logo' ).css( 'margin-top', newval + 'px' );
+		} );
+	} );
+    
+	wp.customize( 'triper_logo_margin_bottom', function( value ) {
+		value.bind( function( newval ) {
+			$( '.site-logo' ).css( 'margin-bottom', newval + 'px' );
+		} );
+	} );
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {

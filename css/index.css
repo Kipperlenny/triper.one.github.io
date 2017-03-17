@@ -63,8 +63,6 @@
 	    flex-basis: 200px;
 
 }
-
-
 .myEvents #filterForm{
     display: none;
 }
@@ -212,10 +210,6 @@ button:focus {
 	top:1px;
 }
 
-
-
-
-
 #newEventForm input,
 #newEventForm textarea{
 	border-radius: 0px;
@@ -223,7 +217,6 @@ button:focus {
 }
 #newEventDescription{
 }
-
 
 .simpleButton{
 	border-bottom: 1px solid #ddd !important;
