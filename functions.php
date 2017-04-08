@@ -91,6 +91,7 @@ function my_login_logo_url() {
 }
 add_filter( 'login_headerurl', 'my_login_logo_url' );
 
+
 function my_login_logo_url_title() {
     return 'Your Site Name and Info';
 }
@@ -286,7 +287,17 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
  * Andreas Hecht: Unnötig aufgeteiltes CSS zu einer Datei zusammengefügt => Style.css
  */
 function triperone_scripts() {
+    
+    wp_enqueue_script( 'jquery-ui-datepicker' );
+    
+    wp_enqueue_style('plugin_name-admin-ui-css',
+                'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/base/jquery-ui.css',
+                false,
+                '',
+                false);
+    
 	wp_enqueue_style( 'triperone-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'triperone-pikaday', get_template_directory_uri() . '/css/pikaday.css' );
 	wp_enqueue_style( 'triperone-cs-skin-elastic', get_template_directory_uri() . '/plugins/selectinspiration/css/cs-skin-elastic.css' );
 	wp_enqueue_style( 'triperone-cs-select', get_template_directory_uri() . '/plugins/selectinspiration/css/cs-select.css' );
 	wp_enqueue_style( 'triperone-ratingsstars', get_template_directory_uri() . '/plugins/ratingstars/ratingstars.css' );
@@ -294,12 +305,13 @@ function triperone_scripts() {
 
 	wp_enqueue_script( 'triperone-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'triperone-pikaday', get_template_directory_uri() . '/js/pikaday.js', array(), '', true );
+	wp_enqueue_script( 'triperone-strtotime', get_template_directory_uri() . '/js/strtotime.js', array('jquery'), '', true );
 	wp_enqueue_script( 'triperone-classie', get_template_directory_uri() . '/plugins/selectinspiration/js/classie.js', array(), '', true );
 	wp_enqueue_script( 'triperone-selectFx', get_template_directory_uri() . '/plugins/selectinspiration/js/selectFx.js', array(), '', true );
 	wp_enqueue_script( 'triperone-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'triperone-map', get_template_directory_uri() . '/js/map.js', array(), '', true );
-	wp_enqueue_script( 'triperone-google-map-api', 	"https://maps.googleapis.com/maps/api/js?key=AIzaSyCKw_vf18b0Ob0jHat29pK73OUAce48B7I&callback=initMap&libraries=places&language=de#asyncload", array(), '', true );
-    wp_enqueue_script( 'triperone', get_template_directory_uri() . '/js/index.js');
+	wp_enqueue_script( 'triperone-google-map-api', 	"https://maps.googleapis.com/maps/api/js?key=AIzaSyC5XyluoEaWa4fffgBDQflD4SaSWRRSQ14&callback=initMap&libraries=places&language=de#asyncload", array(), '', true );
+	wp_enqueue_script( 'triperone', get_template_directory_uri() . '/js/index.js');
 
 	//wp_enqueue_script( 'triperone-ratingstars', get_template_directory_uri() . '/plugins/ratingstars/ratingstars.js', array('jquery'), '', true );
 
@@ -342,33 +354,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * @author Andreas Hecht
  */
 function triper_footer_callback_scripts() {
-?>
-<!--selectinspiration-->
-<script>
-    //callback function for select element inside filter form
-    function onChangeFilterCategorySelection(el){
-        // el === selection value
-        console.log(el);
-    }
-    //callback function for select element inside new event form
-    function onChangeNewEventCategorySelection(el){
-        // el === selection value
-        console.log(el);
-    }  
-    // "select inspiration" init 
-    (function() {
 
-        var newEventCategorySelection = document.getElementById("newEventCategorySelection");
-        new SelectFx(newEventCategorySelection,{onChange:onChangeNewEventCategorySelection});
-    })();
-</script>
-<!--pikaday-->
-<script>
-    var pickerStart = new Pikaday({ field: document.getElementById('searchDatePickerTo') });
-    var pickerEnd = new Pikaday({ field: document.getElementById('searchDatePickerFrom') });
-    var newEventDateStart = new Pikaday({ field: document.getElementById('newEventDateStart') });
-</script>    
-<?php }
+}
 add_action( 'wp_footer', 'triper_footer_callback_scripts' );
 
 
@@ -554,6 +541,7 @@ function triper_no_self_ping( &$links ) {
 }
 
 add_action( 'pre_ping', 'triper_no_self_ping' );
+
 
 
 if ( ! function_exists( 'triper_category' ) ) :

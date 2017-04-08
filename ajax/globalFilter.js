@@ -62,43 +62,45 @@ function getPlaceData(place){
 
     
 // POST NEW EVENT: set event listener on focus on the filterPlaceInput and trigger the place object on tabulator
-document.getElementById("newEventPlace").addEventListener('focusin', function(){  
-    var that = this;
-
-    that.addEventListener('keyup',function(e){
-        if(e.keyCode === 9){
-            //google.maps.event.trigger(this, 'focus');
-            google.maps.event.trigger(this, 'keydown', {
-                keyCode: 13
-            });
-            newEventPlace = autocompleteNewEvent.getPlace();
-            console.log("newEventPlace");
-            console.log(newEventPlace);
-            console.log("autocompleteNewEvent");
-            console.log(autocompleteNewEvent);
-            autoCompleteData = getPlaceData(newEventPlace);
-        }
-    },false);
-
-    google.maps.event.addDomListener(that, 'keydown', function(e) { 
-        if (e.keyCode == 13) { 
-            e.preventDefault(); 
-            setTimeout(function(){
-                newEventPlace = autocompleteNewEvent.getPlace();
-                console.log("newEventPlace");
-                console.log(newEventPlace);
-                console.log("autocompleteNewEvent");
-                console.log(autocompleteNewEvent);
-                autoCompleteData = getPlaceData(newEventPlace);
-            },500);
-        }
-      }); 
-
-},false);//focusin listener
+if(document.getElementById("newEventPlace")) {
+	document.getElementById("newEventPlace").addEventListener('focusin', function(){  
+	    var that = this;
+	
+	    that.addEventListener('keyup',function(e){
+	        if(e.keyCode === 9){
+	            //google.maps.event.trigger(this, 'focus');
+	            google.maps.event.trigger(this, 'keydown', {
+	                keyCode: 13
+	            });
+	            newEventPlace = autocompleteNewEvent.getPlace();
+	            console.log("newEventPlace");
+	            console.log(newEventPlace);
+	            console.log("autocompleteNewEvent");
+	            console.log(autocompleteNewEvent);
+	            autoCompleteData = getPlaceData(newEventPlace);
+	        }
+	    },false);
+	
+	    google.maps.event.addDomListener(that, 'keydown', function(e) { 
+	        if (e.keyCode == 13) { 
+	            e.preventDefault(); 
+	            setTimeout(function(){
+	                newEventPlace = autocompleteNewEvent.getPlace();
+	                console.log("newEventPlace");
+	                console.log(newEventPlace);
+	                console.log("autocompleteNewEvent");
+	                console.log(autocompleteNewEvent);
+	                autoCompleteData = getPlaceData(newEventPlace);
+	            },500);
+	        }
+	      }); 
+	},false);//focusin listener
+}
 
 
 window.addEventListener('load',function(){
     var searchEventForm = document.getElementById("searchEventForm");
+    if(!searchEventForm) return;
     searchEventForm.addEventListener("submit", function(e){
         e.preventDefault();
         var category = jQuery( '#selectCategorySearchForm' ).val();
@@ -172,6 +174,5 @@ getFilteredEvents = function(getFilterPlaceData, category){
 
 
 //
-  
     
 }(jQuery));

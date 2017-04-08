@@ -1,10 +1,12 @@
 var newEventButton = document.getElementById('newEventHeading');
 
-//New Event Form Animation on click
-newEventButton.addEventListener("click", function(){
-		var newEventFormDiv = document.getElementById("newEventFormDiv");
-		newEventFormDiv.classList.toggle("closed");
-});
+if(newEventButton) {
+	//New Event Form Animation on click
+	newEventButton.addEventListener("click", function(){
+			var newEventFormDiv = document.getElementById("newEventFormDiv");
+			newEventFormDiv.classList.toggle("closed");
+	});
+}
 	
 
 //prevents calling ajax request on multiple click unless the first request is finished and the form was made empty

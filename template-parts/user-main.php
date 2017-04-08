@@ -8,8 +8,12 @@
         'posts_per_page' => $posts_per_page,
     );
 ?>
-	
+
+ <div class="below-map">
+<?php do_action( 'below-map' ); ?>  
+ </div>	
 <div id="content" class="site-content themeform">
+
 	<?php get_sidebar('left'); ?>
 	
 	

@@ -16,17 +16,17 @@ function initMap() {
 		zoom: 5
 	});
 
-	/*autocompleteFilter = new google.maps.places.Autocomplete((document.getElementById('filterPlaceInput')), {
+	autocompleteFilter = new google.maps.places.Autocomplete((document.getElementById('search_city')), {
 		types: ['(cities)']
 	});
   
     autocompleteFilter.addListener('place_changed', function(){
         onPlaceChanged(getPlaceData);
-    });*/
+    });
 	
     
 
-	//showAllMarker();
+	showAllMarker();
 }//initMap
 
 
@@ -40,7 +40,7 @@ setTimeout(function(){
 
 //When the user selects a city, get the place details for the city and
 //zoom the map in on the city.
-function onPlaceChanged() {
+function onPlaceChanged(place) {
 
 	
     jQuery('.stat:first-child .count-title').text('Hosts in ' + place.name);
@@ -319,9 +319,9 @@ function showOutdoorMarker() {
 	
 	//showMarker('outdoor2', {lat: 40.703667, lng: -74.011795}, 'button_outdoor_small.png', '<h1>Outdoor Event 2</h1><p>gaaaanz viel info</p>');
 }
-/*
+
 jQuery(document).ready(function() {
-	jQuery.datepicker.setDefaults($.datepicker.regional['de']);
+	//jQuery.datepicker.setDefaults($.datepicker.regional['de']);
 	jQuery('.datum').datepicker({
 		onSelect: function(dateText) {
 			filterMarker();
@@ -399,6 +399,6 @@ jQuery(document).ready(function() {
 		showCookingMarker();
 		filterMarker(true);
 	});
+	
+	initAutocomplete();
 });
-    
-    */

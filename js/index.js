@@ -1,7 +1,7 @@
 (function($){
     
     $('document').ready(function(){
-        if (onLoadFoundPosts <= FOUNDPOSTSLIMIT || onLoadFoundPosts === null){
+        if (typeof onLoadFoundPosts == 'undefined' || onLoadFoundPosts <= FOUNDPOSTSLIMIT || onLoadFoundPosts === null){
            $(".loadMoreLink").addClass('none');
         }           
     });
