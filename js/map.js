@@ -8,6 +8,7 @@ var autocomplete;
 var autocomplete_street;
 var weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 var autoCompleteData;
+
 function initMap() {
 	// Create a map object and specify the DOM element for display.
 	map = new google.maps.Map(document.getElementById('map'), {
@@ -26,6 +27,8 @@ function initMap() {
 	
     
 
+	
+	initAutocomplete();
 	showAllMarker();
 }//initMap
 
@@ -399,6 +402,4 @@ jQuery(document).ready(function() {
 		showCookingMarker();
 		filterMarker(true);
 	});
-	
-	initAutocomplete();
 });

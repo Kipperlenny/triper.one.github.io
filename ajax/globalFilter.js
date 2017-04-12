@@ -15,7 +15,7 @@ function initAutocomplete() {
     autocompleteFilter.addListener('place_changed', filterAutocompleteCallback);
     
     
-    autocompleteNewEvent =  new google.maps.places.Autocomplete((document.getElementById('newEventPlace')), {
+    autocompleteNewEvent =  new google.maps.places.Autocomplete((document.getElementById('newEventPlace')), { 
 		types: ['(cities)']
 	});
 }
